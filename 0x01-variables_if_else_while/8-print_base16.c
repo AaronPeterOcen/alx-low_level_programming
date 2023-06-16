@@ -9,15 +9,13 @@ int main(void)
 {
 	int m;
 
-	while(m == 0 && m  < 10)
+	for(m == 0; m  < 10; m++)
 	{
 		putchar(m);
-		m++;
 	}
-	while(m = 'a' && m < 'f')
+	for(m = 'a'; m < 'f'; m++)
 	{
 		putchar(m);
-		m++;
 	}
 	putchar('\n');
 
