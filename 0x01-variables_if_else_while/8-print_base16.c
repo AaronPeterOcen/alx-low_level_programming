@@ -7,15 +7,20 @@
  */
 int main(void)
 {
-	int m;
+	int m = 0;
 
-	for(m = 0; m  < 10; m++)
+	while(m < 10)
 	{
-		putchar(m);
+		putchar('0' + m);
+		m++;
 	}
-	for(m = 'a'; m <= 'f'; m++)
+
+	m = 'a';
+
+	while(m <= 'f')
 	{
 		putchar(m);
+		m++;
 	}
 	putchar('\n');
 
