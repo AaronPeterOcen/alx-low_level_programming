@@ -9,7 +9,7 @@ int main(void)
 {
 	int m = 0;
 
-	while(m < 10)
+	while (m < 10)
 	{
 		putchar('0' + m);
 		m++;
@@ -17,7 +17,7 @@ int main(void)
 
 	m = 'a';
 
-	while(m <= 'f')
+	while (m <= 'f')
 	{
 		putchar(m);
 		m++;
