@@ -1,18 +1,18 @@
-#include <main.h>
+#include "main.h"
 #include <stdio.h>
 
 /**
- * main - prints lowercase alpabet
- *
- * Return: Always 0.
+ * print_alphabet - prints the alphabet in lowercase
  */
-
-void print_alphabet(void);
-
-int main(void)
+void print_alphabet(void)
 {
-	print_alphabet();
-	return (0);
-}
+	char c = 'a';
 
-int alphabet
+	while (c <= 'z')
+	{
+		_putchar(c);
+		c++;
+	}
+
+	putchar('\n');
+}
