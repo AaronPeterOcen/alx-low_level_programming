@@ -2,22 +2,15 @@
 #include <stdio.h>
 
 /**
- * _islower(int c) - checks for lowercase c
+ * _islower - checks for lowercase c
+ *@c: the character to be checked
+ * Return: 1 if c is lower, 0 otherwise
  */
 int _islower(int c)
 {
-	char b = 'c';
-
-	while (c >= 'a' && c <= 'z')
+	if (c >= 'a' && c <= 'z')
 	{
-		if (c == b)
-		{
-			return (1);
-		} else
-		{
-			return (0);
-		}
-	c++;
+		return (1);
 	}
 	return (0);
 }
