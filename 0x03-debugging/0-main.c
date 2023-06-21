@@ -1,26 +1,18 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include "main.h"
 
 /**
- * main - tests function that prints sign of integers
- * positive_or_negative - testing the sign of a number
- *
- * Return: Always 0
- */
+* main - tests function that prints if integer is positive or negative
+*
+* positive_or_negative - finding the sign of a number
+* Return: 0
+*/
+
 int main(void)
 {
-	int n = 0;
+        int i;
 
-	if (n > 0)
-	{
-		printf("%d is positive\n", n);
-	} else if (n == 0)
-	{
-		printf("%d is zero\n", n);
-	} else if (n < 0)
-	{
-		printf("%d is negative \n", n);
-	}
-	return (0);
+        i = 0;
+        positive_or_negative(i);
+
+        return (0);
 }
