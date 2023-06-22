@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * _putchar - print ing a square
+ * print_square - print ing a square
  * @size: value to be printed
  */
 void print_square(int size)
@@ -16,11 +16,11 @@ void print_square(int size)
 		return;
 	}
 
-	for (i = 0; i < size; i++ )
+			for (i = 0; i < size; i++)
 	{
-			for (j = 0; j < size; j++)
+				for (j = 0; j < size; j++)
 			{
-				_putchar('#');
+					_putchar('#');
 			}
 			_putchar('\n');
 	}
