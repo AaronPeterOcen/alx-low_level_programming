@@ -5,17 +5,16 @@
 /**
  * puts2 - prints every character in  a string starting with the first
  *
- * @str - variable to be checked
+ *@str: variable to be checked
  */
 void puts2(char *str)
 {
-	int l = strlen(str);
-	int i;
+	int i = 0;
 
-	for (i = 0; i < l; i++)
+	for (; str[i] != '\0'; i++)
 	{
 		if (i % 2 == 0)
-			printf("%d",i);
+			_putchar(str[i]);
 	}
-	putchar('\n');
+	_putchar('\n');
 }
