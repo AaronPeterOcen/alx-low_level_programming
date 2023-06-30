@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+/*prints a = 98\n*/
+
 int main(void)
 {
 	int n;
