@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_buffer - prints a buffer
@@ -8,7 +8,6 @@
  *
  * Return: void
  */
-
 void print_buffer(char *b, int size)
 {
 	int a, c;
@@ -20,7 +19,7 @@ void print_buffer(char *b, int size)
 		for (c = 0; c < 10; c++)
 		{
 			if ((c + a) >= size)
-				printf(" ");
+				printf("  ");
 			else
 				printf("%02x", *(b + c + a));
 
@@ -38,13 +37,11 @@ void print_buffer(char *b, int size)
 			else
 				printf(".");
 		}
-
 		if (a >= size)
 			continue;
 
 		printf("\n");
 	}
-
 	if (size <= 0)
 		printf("\n");
 }
