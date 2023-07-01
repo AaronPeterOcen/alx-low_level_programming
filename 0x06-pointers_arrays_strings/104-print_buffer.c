@@ -1,13 +1,14 @@
-#include "main.h"
 #include <stdio.h>
+#include "main.h"
 
 /**
- * print_buffer - takes two parameters
- * @b: pointer to a character array b
- * @size: int size
+ * print_buffer - prints a buffer
+ * @b: bytes of the buffer
+ * @size: size of bytes
  *
  * Return: void
  */
+
 void print_buffer(char *b, int size)
 {
 	int a, c;
@@ -24,22 +25,21 @@ void print_buffer(char *b, int size)
 				printf("%02x", *(b + c + a));
 		}
 		printf(" ");
-
-			for (c = 0; c < 10; c++)
-			{
-				if ((c + a) >= size)
-					break;
-
-				else if (*(b + c + a) >= 31 && *(b + c + a) <= 126)
-					printf("%c", *(b + c + a));
-				else
-					printf(".");
-			}
-			if (a >= size)
-				continue;
-
-			printf("\n");
+		for (c = 0; c < 10; c++)
+		{
+			if ((c + a) >= size)
+				break;
+			if (*(b + c + a) >= 31 && *(b + c + a) <= 126)
+				printf("%c", *(b + c + a));
+			else
+				printf(".");
 		}
+
+		if (a >= size)
+			continue;
+		printf("\n");
+	}
+
 	if (size <= 0)
 		printf("\n");
 }
