@@ -24,9 +24,11 @@ void print_buffer(char *b, int size)
 			else
 				printf("%02x", *(b + c + a));
 
+
 			if ((c % 2) != 0 && c != 0)
 				printf(" ");
 		}
+
 		for (c = 0; c < 10; c++)
 		{
 			if ((c + a) >= size)
@@ -39,6 +41,7 @@ void print_buffer(char *b, int size)
 
 		if (a >= size)
 			continue;
+
 		printf("\n");
 	}
 
