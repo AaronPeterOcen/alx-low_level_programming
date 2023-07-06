@@ -4,7 +4,7 @@
 /**
  * is_prime - function to find the prime number
  * @a: the integer n to be found
- * @b: int b
+ * @b: integer b
  * Return: 1 if a prime number, 0 otherwise
  */
 int is_prime(unsigned int a, unsigned int b)
