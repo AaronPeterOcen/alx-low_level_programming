@@ -3,8 +3,8 @@
 
 /**
  * print_name - prints a name
- * @name:
- * @f:
+ * @name: name
+ * @f: function
  *
  * Return: void
  */
