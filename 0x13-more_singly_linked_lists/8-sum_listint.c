@@ -9,12 +9,12 @@
 int sum_listint(listint_t *head)
 {
 	listint_t *i = head;
-	int sum = 0;
+	int total = 0;
 
 	/*i = head;*/
 	for (; i != NULL; i = i->next)
 	{
-		sum += i->n;
+		total += i->n;
 	}
-	return (sum);
+	return (total);
 }
