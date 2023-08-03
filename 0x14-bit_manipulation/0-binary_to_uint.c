@@ -11,7 +11,7 @@ unsigned int binary_to_uint(const char *b)
 {
 	unsigned int sln = 0;
 	int pwr = 1;
-	int i = strlen(b) -1;
+	int i = strlen(b) - 1;
 
 	if (b == NULL)
 	{
@@ -20,7 +20,7 @@ unsigned int binary_to_uint(const char *b)
 	while (i >= 0)
 	{
 		if (b[i] != '0' && b[i] != '1')
-			return(0);
+			return (0);
 		sln += ((b[i] - '0') * pwr);
 		pwr *= 2;
 		i--;
