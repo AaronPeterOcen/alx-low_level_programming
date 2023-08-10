@@ -1,7 +1,13 @@
 #include "main.h"
 #define MAXSIZE 1024
 
-/**/
+/**
+ * print_exit - ...
+ * @e: ...
+ * @s: ...
+ * @fdesc: ...
+ * Return: 0
+ */
 int print_exit(int e, char *s, int fdesc)
 {
 	if (e == 97)
@@ -30,7 +36,12 @@ int print_exit(int e, char *s, int fdesc)
 	}
 }
 
-/**/
+/**
+ * main - copies the content fo a file to another
+ * @argc: arg count
+ * @argv: array of pointers
+ * Return: 0
+ */
 int main(int argc, char *argv[])
 {
 	int file_in, file_out, rd_stat, wr_stat, shut_in, shut_out;
@@ -40,7 +51,6 @@ int main(int argc, char *argv[])
 	{
 		print_exit(97, NULL, 0);
 	}
-
 	file_in = open(argv[1],  O_RDONLY);
 	if (file_in == -1)
 	{
@@ -59,7 +69,6 @@ int main(int argc, char *argv[])
 			print_exit(98, argv[1], 0);
 		}
 		wr_stat = write(file_out, buffer, rd_stat);
-
 		if (wr_stat == -1)
 		{
 			print_exit(99, argv[2], 0);
@@ -72,8 +81,7 @@ int main(int argc, char *argv[])
 	}
 	shut_out = close(file_out);
 	if (shut_out == -1)
-	{
 		print_exit(100, NULL, file_out);
-	}
+
 	return (0);
 }
