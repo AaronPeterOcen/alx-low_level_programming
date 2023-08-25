@@ -11,23 +11,23 @@ void print_binary(unsigned long int n)
 	int number = 0;
 	unsigned long int now;
 
-	while (n)
+	if (n == 0)
 	{
-		now = n & 1;
-
-		if (now)
+		printf("0");
+		return;
+	} 
+	for (now = n, number = 0; (now >>= 1) > 0; number++)
+		;
+	for (; number >= 0; number--)
+	{
+		if ((n >> number) & 1)
 		{
 			printf("1");
 		}
-		else if (number)
+		else
 		{
 			printf("0");
 		}
-		n >>= 1;
-	}
-	if (!number)
-	{
-		printf("0");
 	}
 }
 
