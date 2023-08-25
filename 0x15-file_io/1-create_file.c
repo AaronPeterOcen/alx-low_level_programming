@@ -26,11 +26,8 @@ int create_file(const char *filename, char *text_content)
 		text_content = "";
 	}
 
-	num_letters = 0;
-	while (text_content[num_letters])
-	{
-		num_letters++;
-	}
+	for (num_letters = 0; text_content[num_letters]; num_letters++)
+			;
 	result_w = write(f_desc, text_content, num_letters);
 	if (result_w == -1)
 	{
