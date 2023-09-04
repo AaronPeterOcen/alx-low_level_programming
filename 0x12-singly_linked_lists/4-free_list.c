@@ -1,19 +1,20 @@
 #include "lists.h"
 
 /**
- * free_list - frees the list_t list
- * @head: pointer to list head
+ *free_list - Frees a list
+ *@head: A pointer to the list head
+ *
  */
+
 void free_list(list_t *head)
 {
-	list_t *curr = head;
-	list_t d;
+	list_t *tmp;
 
-	while (curr != NULL)
+	while (head)
 	{
-		d = curr->next;
-		free(curr->str);
-		free(curr);
-		curr = d;
+		tmp = head->next;
+		free(head->str);
+		free(head);
+		head = tmp;
 	}
 }
