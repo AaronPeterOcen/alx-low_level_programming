@@ -2,43 +2,41 @@
 #include <stdlib.h>
 
 /**
- * main - Entry point
- * @c: The number of arguments.
- * @v: The arguments.
+ * main - prints its own opcodes
+ * @argc: number of arguments
+ * @argv: array of arguments
  *
- * Description: program prints opcodes in hexadecimal form.
- *
- * Return: 0 on success.
+ * Return: Always 0 (Success)
  */
-int main(int c, char *v[])
+int main(int argc, char *argv[])
 {
-	int i = 0, a;
+	int bytes, i;
+	char *arr;
 
-	if (c != 2)
+	if (argc != 2)
 	{
 		printf("Error\n");
-		return (1);
+		exit(1);
 	}
 
-	a = atoi(v[1]);
-	if (a < 0)
+	bytes = atoi(argv[1]);
+
+	if (bytes < 0)
 	{
 		printf("Error\n");
 		exit(2);
 	}
 
-	while (i < a)
+	arr = (char *)main;
+
+	for (i = 0; i < bytes; i++)
 	{
-		printf("%02hhx", *(unsigned char *)main + 1);
-		if(i < a - 1)
+		if (i == bytes - 1)
 		{
-			printf(" ");
+			printf("%02hhx\n", arr[i]);
+			break;
 		}
-		else
-		{
-			printf ("\n");
-		}
-		i++;
+		printf("%02hhx ", arr[i]);
 	}
 	return (0);
 }
