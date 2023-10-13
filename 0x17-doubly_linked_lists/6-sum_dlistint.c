@@ -9,14 +9,13 @@
  */
 int sum_dlistint(dlistint_t *head)
 {
-	int sums;
+	int sums = 0;
 
-	sums = 0;
 	while (head)
 	{
-		sum += head->n;
+		sums += head->n;
 		head = head->next;
 	}
-	return (sum);
+	return (sums);
 }
 
