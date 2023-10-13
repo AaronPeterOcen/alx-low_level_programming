@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * add_dnodeint - Adds a new element at the begining of the list
+ * add_dnodeint_end- Adds a new element at the begining of the list
  *
  * @head: A pointer that points to another pointer which inturn
  * points to the head of the list.
