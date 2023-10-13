@@ -14,17 +14,27 @@
 
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	dlistint_t *nn = malloc(sizeof(dlistint_t));
+	dlistint_t *new_mem, *last_dir;
 
-	if (nn == NULL)
+	new_mem = malloc(sizeof(dlistint_t));
+
+	if (new_mem == NULL)
 		return (NULL);
-	nn->n = n;
-	nn->prev = NULL;
-	nn->next = *head;
 
-	if (*head != NULL)
-		(*head)->prev = nn;
-	*head = nn;
+	new_mem->n = n;
+	new_mem->next = NULL;
+	new_mem->prev = NULL;
+	if (*head == NULL)
+	{
+		*head = new_mem;
+		return (new_mem);
+	}
+	last_dir = *head;
 
-	return (*head);
+	while (last_dir->next != NULL)
+		last_dir = last_dir->next;
+	last_dir->next = new_mem;
+	new_mem->prev = last_dir;
+
+	return (new_mem);
 }
