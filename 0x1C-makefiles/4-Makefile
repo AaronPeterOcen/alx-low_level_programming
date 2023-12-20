@@ -1,19 +1,29 @@
-cc = gcc
+.PHONE: all link clean oclean fclean re
+
+CC = gcc
 SRC = main.c school.c
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:%.c=%.o)
 NAME = school
 RM = rm -f
-CLFLAGS = -Wall -Werror -Wextra -pedantic
+CFLAGS = -Wall -Werror -Wextra -pedantic
 
-all: $(OBJ)
-	$(CC) $(CLFLAGS) $(OBJ) -o $(NAME)
+all: link
 
+%.o: %.c
+	${CC} -c $< -o $@ ${CFLAGS}
+
+link: $(OBJ)
+	${CC} $(OBJ) -o ${NAME} ${CFLAGS}
+
+# delete exe, vim and emacs temp files
 clean:
-	$(RM) *~ $(NAME)
+	${RM} ${NAME} *~ \#* *#
 
+# delete object files
 oclean:
-	$(RM) $(OBJ)
+	${RM} $(OBJ)
 
 fclean: clean oclean
 
+# force recompilation
 re: fclean all
