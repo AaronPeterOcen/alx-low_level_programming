@@ -1,2 +1,9 @@
-all: main.c school.c
-	gcc main.c school.c -o school
+.PHONY: all
+
+cc = gcc
+CFLAGs = -Wall -Werror -Wextra -pedantic
+
+all: school
+
+school:
+	${CC} ${CFLAGS} -o school main.c school.c
