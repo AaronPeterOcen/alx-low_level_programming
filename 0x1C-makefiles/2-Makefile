@@ -1,7 +1,17 @@
 cc = gcc
 SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
-NAME = school
+NAME = $(SRC:.c=)
 
-all: $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+all: link
+
+%.o: %.c
+	@echo "compiling $< to $@"
+	${CC} -c $< -o $@
+
+link: $(OBJ)
+	@echo "linking ..."
+	${CC} ${OBJ} -o school
+
+clean:
+	rm *.o
