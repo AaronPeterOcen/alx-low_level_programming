@@ -1,17 +1,21 @@
-cc = gcc
+# Make file
+
+CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = $(SRC:.c=)
 
 all: link
 
+# make object files
 %.o: %.c
-	@echo "compiling $< to $@"
+	@echo "Compiling $< to $@"
 	${CC} -c $< -o $@
 
+# link object files
 link: $(OBJ)
 	@echo "linking ..."
-	${CC} ${OBJ} -o school
+	${CC} $(OBJ) -o school
 
 clean:
 	rm *.o
